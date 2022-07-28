@@ -1,0 +1,19 @@
+.my-form-style{
+  width: 500px;
+  margin-left: 300px;
+  margin-top: 80px;
+}
+.myInput{
+  margin-bottom: 20px;
+}
+.myInputBtn{
+  margin-top: 20px;
+}
+.header-style{
+  background-image: linear-gradient(to right, #D500F9, #FFD54F);
+  color: white;
+}
+.body-style{
+  background-color: black;
+  color: white;
+}

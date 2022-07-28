@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="card my-form-style">
+
+    <div class="card-header header-style">
+      <h1>ADD CONTACT FORM</h1>
+    </div>
+    <div class="card-body body-style">
+      <form #addForm="ngForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <div [class]="isError? 'errorText':'d-none'">{{message}}</div>
+          <div [class]="isSuccess? 'successText':'d-none'">{{message}}</div>
+          <label for="exampleInputName">Name</label>
+          <input type="text" class="form-control myInput" [class.is-invalid]="fname.errors && fname.touched" #fname="ngModel" required minlength="3" name="contactName" id="exampleInputName" placeholder="Enter the Name" [(ngModel)]="con.contactName">
+
+          <div *ngIf="fname.errors && fname.touched">
+            <div class="text-danger" *ngIf="fname.errors.required">Full Name is Required !</div>
+            <div class="text-danger" *ngIf="fname.errors.minlength">Full Name must be greater that 3 characters !</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control myInput" name="cEmail" id="exampleInputEmail1" aria-describedby="emailHelp" [class.is-invalid]="fname.errors && fname.touched" #email="ngModel" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required [(ngModel)]="con.contactEmail"  placeholder="Enter the Email">
+
+          <div *ngIf="email.errors && email.touched">
+            <div class="text-danger" *ngIf="email.errors.required">Email ID is Required !</div>
+            <div class="text-danger" *ngIf="email.errors.pattern">Invalid email format ! Email should be of the form 'john@gmail.com'.</div>
+          </div>
+
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputPhone">Phone Number</label>
+          <input type="text" class="form-control myInput" name="cPhone" id="exampleInputPhone" [class.is-invalid]="phone.errors && phone.touched" required #phone="ngModel" pattern="^[0-9 +]+$" minlength="4" maxlength="12" [(ngModel)]="con.contactPhone" placeholder="Enter the Phone Number">
+
+          <div *ngIf="phone.errors && phone.touched">
+            <div class="text-danger" *ngIf="phone.errors.required">Phone Number is Required !</div>
+            <div class="text-danger" *ngIf="phone.errors.pattern">Invalid number format !</div>
+            <div class="text-danger" *ngIf="phone.errors.minlength">Phone Number must be atleast 4 characters !</div>
+            <div class="text-danger" *ngIf="phone.errors.maxlength">Phone Number must be atmost 12 characters !</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleSelectType">Type</label>
+
+          <select class="form-select" name="group" [(ngModel)]="con.contactType" placeholder="Select contact group" ngModel required>
+            <option *ngFor="let group of groups" value={{group}}>{{group}}</option>
+          </select>
+
+        </div>
+
+        <button type="submit" class="btn btn-primary myInputBtn" [disabled]="addForm.form.invalid">ADD CONTACT</button>
+
+      </form>
+    </div>
+  </div>
+
+</div>
+
