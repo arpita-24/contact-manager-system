@@ -1,0 +1,22 @@
+.delete-card{
+  margin-top: 250px;
+}
+.header-style{
+  background-image: linear-gradient(to right, #FFD54F, #D500F9);
+  color: white;
+}
+.errorText{
+  margin-top:20px;
+  background-color: rgb(219, 3, 3);
+  color:white;
+  margin-bottom: 30px;
+  padding: 10px;
+}
+
+.successText{
+  margin-top:20px;
+  background-color: rgb(43, 199, 4);
+  color:white;
+  margin-bottom: 30px;
+  padding: 10px;
+}

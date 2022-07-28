@@ -1,0 +1,17 @@
+<div class="container">
+  <div [class]="isError? 'errorText':'d-none'">{{message}}</div>
+  <div [class]="isSuccess? 'successText':'d-none'">{{message}}</div>
+
+  <div class="card delete-card">
+
+    <div class="card-header header-style">
+      <h2>DELETE CONTACT INFORMATION</h2>
+    </div>
+
+    <div class="card-body">
+      <b>Are you sure you want to delete the contact?</b><br><br>
+      <button type="submit" class="btn btn-success text-white" (click)="onYesDelete()">YES </button>&nbsp;&nbsp;&nbsp;&nbsp; <a routerLink="/contacts/list" class="btn btn-danger text-white">NO</a>
+    </div>
+
+  </div>
+</div>
