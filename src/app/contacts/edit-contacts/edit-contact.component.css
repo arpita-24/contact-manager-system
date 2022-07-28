@@ -1,0 +1,44 @@
+.my-form-style{
+  width: 500px;
+  margin-left: 300px;
+  margin-top: 80px;
+}
+.myInput{
+  margin-bottom: 20px;
+}
+.myInputBtn{
+  background-color: black !important;
+  color: white !important;
+  margin-top: 20px;
+}
+.myInputBtn:hover{
+  background-image: linear-gradient(to right, #FFD54F, #f90000);
+  color: white;
+
+}
+.errorStyle{
+  border: 2px solid red;
+}
+
+.body-style{
+  background-image: linear-gradient(to right, #D500F9, #FFD54F);
+  color: white;
+}
+.header-style{
+  background-color: black;
+  color: white;
+}
+
+.errorText{
+  background-color: rgb(219, 3, 3);
+  color:white;
+  margin-bottom: 30px;
+  padding: 10px;
+}
+
+.successText{
+  background-color: rgb(43, 199, 4);
+  color:white;
+  margin-bottom: 30px;
+  padding: 10px;
+}
