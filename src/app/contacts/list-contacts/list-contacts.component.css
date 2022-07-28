@@ -1,0 +1,17 @@
+.header-style{
+  background-image: linear-gradient(to right, #D500F9, #FFD54F);
+  color: white;
+}
+.border-color{
+  background-image: linear-gradient(to right, #FFD54F, #D500F9);
+  color: white
+}
+.my-btn-style{
+  background-color: #c400ba;
+  color: white;
+}
+.user-image{
+ float: right;
+ border:3px solid purple;
+ border-radius: 50%;
+}

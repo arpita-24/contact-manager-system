@@ -1,0 +1,31 @@
+<app-nav></app-nav>
+<div class="container ">
+  <div class="row mt-5">
+    <div class="col-12">
+      <div class="card mt-5" *ngFor="let contact of contactData">
+        <div class="card-header bg-primary header-style">
+          <h2>{{contact.contactName}}</h2>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button class="btn btn-dark me-md-2" routerLink="/contacts/delete/{{contact._id}}" type="button"><i class="fa fa-trash"></i></button>
+            <button class="btn my-btn-style" type="button" routerLink="/contacts/edit/{{contact._id}}"><i class="fa fa-edit"></i></button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-9">
+              <div class="col-5 ">
+                <div class="p-2 m-3 border border-color rounded-pill ">{{contact.contactEmail}}</div>
+                <div class="p-2 m-3 border border-color rounded-pill ">{{contact.contactPhone}}</div>
+                <div class="p-2 m-3 border border-color rounded-pill ">{{contact.contactType}}</div>
+              </div>
+            </div>
+            <div class="col-3">
+              <img src="/assets/YaL3s.jpg" class="user-image" alt="user profile icon">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
