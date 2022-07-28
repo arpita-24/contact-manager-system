@@ -1,0 +1,14 @@
+/* .my-nav{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+} */
+.mybtn:hover{
+
+  color: #fff;
+  background-image: linear-gradient(to right, #D500F9, #ffed4e)
+
+}
+.my-brand-border{
+  border: 2px solid white;
+}
