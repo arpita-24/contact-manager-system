@@ -1,0 +1,54 @@
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="container mybody"> 
+  <div class="signup-form">
+    <form  #regForm="ngForm" ngSubmit="onSubmit()">
+		<h2>Sign Up</h2>
+		<p>Please fill in this form to create an account!</p>
+		<hr>
+        <div class="form-group">
+          <div [class]="isError? 'errorText':'d-none'">{{message}}</div>
+          <div [class]="isSuccess? 'successText':'d-none'">{{message}} <a routerLink='/login'>Login Here</a></div>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+            <input type="text" class="form-control" name="fullname" placeholder="Fullname" [class.is-invalid]="fname.errors && fname.touched" #fname="ngModel" required minlength="3" [(ngModel)]="user.fullname">
+          </div>
+          <div *ngIf="fname.errors && fname.touched">
+            <div class="text-danger" *ngIf="fname.errors.required">Full Name is Required !</div>
+            <div class="text-danger" *ngIf="fname.errors.minlength">Full Name must be greater that 3 characters !</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
+            <input type="email" class="form-control" name="email" placeholder="Email Address" [class.is-invalid]="fname.errors && fname.touched" #email="ngModel" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required [(ngModel)]="user.email">
+          </div>
+          <div *ngIf="email.errors && email.touched">
+            <div class="text-danger" *ngIf="email.errors.required">Email ID is Required !</div>
+            <div class="text-danger" *ngIf="email.errors.pattern">Invalid email format ! Email should be of the form 'john@gmail.com'.</div>
+          </div>
+        </div>
+		<div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-lock"></i></span>
+				<input type="password" class="form-control" name="password" minlength="6" pattern="^[a-z0-9#@&A-Z]+$" placeholder="Password" [class.is-invalid]="fname.errors && fname.touched" #password="ngModel" required [(ngModel)]="user.password">
+			</div>
+      <div *ngIf="password.errors && password.touched">
+        <div class="text-danger" *ngIf="password.errors.required">Password is Required !</div>
+        <div class="text-danger" *ngIf="password.errors.pattern">Invalid password ! Usage of restricted characters !</div>
+        <div class="text-danger" *ngIf="password.errors.minlength">Password must be atleast 6 characters long !</div>
+      </div>
+    </div>
+    <div class="form-group">
+			<label class="checkbox-inline">
+      <input type="checkbox" name="check" ngModel required> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
+		</div>
+		<div class="form-group">
+            <button type="submit" class="btn btn-primary btn-lg" (click)="onSubmit()" [disabled]="regForm.form.invalid">Sign Up</button>
+        </div>
+    </form>
+	<div class="text-center">Already have an account? <a href="/login" class="login-link">Login here</a></div>
+</div>
+</div>
